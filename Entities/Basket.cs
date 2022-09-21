@@ -8,18 +8,31 @@ namespace Entities
 {
     public class Basket
     {
+        /// <summary>
+        /// The list of products in this basket.
+        /// </summary>
         private List<Product> products;
 
+        /// <summary>
+        /// Creates a new instance of Basket, with an empty list of products.
+        /// </summary>
         public Basket()
         {
             products = new List<Product>();
         }
 
+        /// <summary>
+        /// Creates a new instance of Basket, with the provided list of products.
+        /// </summary>
+        /// <param name="products">The existing list of products to put in this basket.</param>
         public Basket(List<Product> products)
         {
             Products = products;
         }
 
+        /// <summary>
+        /// Gets the list of products in this basket.
+        /// </summary>
         public List<Product> Products
         {
             get => products;
@@ -31,6 +44,11 @@ namespace Entities
             }
         }
 
+        /// <summary>
+        /// Adds a product to the basket.
+        /// </summary>
+        /// <param name="product">The product to add to this basket.</param>
+        /// <exception cref="ArgumentNullException">When...</exception>
         public void Add(Product product)
         {
             if (product is null)
