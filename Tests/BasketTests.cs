@@ -48,5 +48,23 @@ namespace Tests
             // Assert:
             Assert.Throws<ArgumentNullException>(call);
         }
+
+        [Fact]
+        public void AddProduct()
+        {
+            // Arrange:
+            Basket basket = new Basket();
+            Product productToAdd = new Product();
+            int expectedCount = 1;
+            int actualCount;
+
+            // Act:
+            basket.Add(productToAdd);
+            actualCount = basket.Products.Count;
+
+            // Assert:
+            Assert.Equal(expectedCount, actualCount);
+
+        }
     }
 }
