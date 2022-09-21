@@ -12,6 +12,7 @@ namespace Entities
         /// The list of products in this basket.
         /// </summary>
         private List<Product> products;
+        private string name;
 
         /// <summary>
         /// Creates a new instance of Basket, with an empty list of products.
@@ -68,6 +69,14 @@ namespace Entities
 
             // TODO: consider using the bool return value from the List.Remove method.
             products.Remove(product);
+        }
+
+        public string Name
+        {
+            get => name; set
+            {
+                if(value == null) throw new ArgumentNullException(nameof(value));
+            }
         }
     }
 }

@@ -50,6 +50,20 @@ namespace Tests
         }
 
         [Fact]
+        public void ThrowsOn_InvalidBasketMutation()
+        {
+            // Arrange:
+            Basket b = new Basket();
+            Func<string> call;
+
+            // Act:
+            call = () => b.Name = null;
+
+            // Assert:
+            Assert.Throws<ArgumentNullException>(call);
+        }
+
+        [Fact]
         public void AddProduct()
         {
             // Arrange:
